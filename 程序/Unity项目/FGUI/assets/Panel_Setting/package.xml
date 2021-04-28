@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="k8m86gzj" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="hdar0" name="Main.xml" path="/" exported="true"/>
+    <component id="hdar1" name="sound_slider_grip.xml" path="/" exported="true"/>
+    <component id="hdar2" name="sound_slider.xml" path="/" exported="true"/>
+    <component id="hdar3" name="Game_Lan_checkbox.xml" path="/" exported="true"/>
+    <component id="hdar4" name="Game_Lan_checkbox_popup.xml" path="/" exported="true"/>
+    <component id="hdar5" name="Game_Lan_checkbox_item.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="Panel_Setting"/>
+</packageDescription>

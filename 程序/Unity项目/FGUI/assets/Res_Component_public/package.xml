@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="kgrtueft" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="n0i75" name="PanelMask_black.xml" path="/Mask/" exported="true"/>
+    <component id="n0i76" name="PanelMask_White.xml" path="/Mask/" exported="true"/>
+    <component id="n0i77" name="Text_BG_white.xml" path="/Bg/" exported="true"/>
+    <component id="n0i78" name="Text_bg_grey.xml" path="/Bg/" exported="true"/>
+    <component id="n0i79" name="btn1.xml" path="/Button/" exported="true"/>
+    <component id="n0i7a" name="btn2.xml" path="/Button/" exported="true"/>
+    <component id="hdarb" name="btn_text.xml" path="/Button/" exported="true"/>
+    <component id="hdarc" name="btn_normal.xml" path="/Button/" exported="true"/>
+  </resources>
+  <publish name="Res_Component_public"/>
+</packageDescription>

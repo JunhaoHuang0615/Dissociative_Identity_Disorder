@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="500,500">
+  <displayList>
+    <image id="n0_mtyl" name="n0" src="n0i70" pkg="k6li0d6s" xy="0,0" pivot="0.52,0.51"/>
+  </displayList>
+  <transition name="loading_ani" autoPlay="true">
+    <item time="0" type="Rotation" target="n0_mtyl" tween="true" startValue="0" endValue="180" duration="18" ease="Linear"/>
+    <item time="18" type="Rotation" target="n0_mtyl" tween="true" startValue="180" endValue="360" duration="18" ease="Linear"/>
+  </transition>
+</component>

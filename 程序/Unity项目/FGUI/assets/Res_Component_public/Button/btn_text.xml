@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="133,79" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n5_hdar" name="icon" xy="0,0" size="134,83" type="rect" lineColor="#ffcccccc" fillColor="#ff999999"/>
+    <text id="n4_hdar" name="title" xy="27,0" size="79,79" font="ui://kk4d64orn0i7d" fontSize="9" color="#cccc00" align="center" vAlign="middle" text="1"/>
+  </displayList>
+  <Button downEffect="dark" downEffectValue="0.80"/>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="500,47" extention="Slider">
+  <displayList>
+    <image id="n1" name="n1" src="n0i75" pkg="k6li0d6s" xy="0,0" size="500,47">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n2" name="bar" src="n0i77" pkg="k6li0d6s" xy="34,10" size="423,27"/>
+    <text id="n3" name="title" xy="501,-11" size="98,72" fontSize="30" align="center" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="width-width"/>
+    </text>
+    <component id="n4" name="grip" src="hdar1" xy="416,0">
+      <relation target="n2" sidePair="right-right"/>
+    </component>
+  </displayList>
+  <Slider/>
+</component>

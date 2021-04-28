@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="163,69" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n1" name="n1" src="n0i71" pkg="kk4d64or" xy="0,0">
+      <gearDisplay controller="button" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n2" name="n2" src="n0i70" pkg="kk4d64or" xy="-5,-2">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n3" name="n3" src="n0i70" pkg="kk4d64or" xy="-5,-2">
+      <gearDisplay controller="button" pages="2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n4" name="n4" src="n0i71" pkg="kk4d64or" xy="0,0">
+      <gearDisplay controller="button" pages="3"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n5_hdar" name="title" xy="0,0" size="163,69" fontSize="30" align="center" vAlign="middle" autoSize="none" text="返 回&#xA;"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="0.80"/>
+</component>

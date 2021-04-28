@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="kk4d64or" jpegQuality="80" compressPNG="true">
+  <resources>
+    <image id="n0i70" name="b4.png" path="/Button/" exported="true"/>
+    <image id="n0i71" name="b5.png" path="/Button/" exported="true"/>
+    <image id="n0i72" name="button-153683_640.png" path="/Button/" exported="true"/>
+    <image id="n0i73" name="0.png" path="/Number/"/>
+    <image id="n0i74" name="1.png" path="/Number/"/>
+    <image id="n0i75" name="2.png" path="/Number/"/>
+    <image id="n0i76" name="3.png" path="/Number/"/>
+    <image id="n0i77" name="4.png" path="/Number/"/>
+    <image id="n0i78" name="5.png" path="/Number/"/>
+    <image id="n0i79" name="6.png" path="/Number/"/>
+    <image id="n0i7a" name="7.png" path="/Number/"/>
+    <image id="n0i7b" name="8.png" path="/Number/"/>
+    <image id="n0i7c" name="9.png" path="/Number/"/>
+    <font id="n0i7d" name="number1_9.fnt" path="/Number/" exported="true"/>
+    <movieclip id="n0i7e" name="pet.jta" path="/Anim/" exported="true"/>
+    <component id="mtylf" name="loading.xml" path="/Anim/" exported="true"/>
+  </resources>
+  <publish name="Res_Game"/>
+</packageDescription>

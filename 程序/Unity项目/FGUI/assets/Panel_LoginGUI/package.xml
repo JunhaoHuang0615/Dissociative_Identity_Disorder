@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="e8ley9yi" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="zbym2" name="Main.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="Panel_LoginGUI">
+    <atlas name="默认" index="0"/>
+  </publish>
+</packageDescription>

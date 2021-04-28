@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="mu7ue7b5" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="z3ip0" name="Main.xml" path="/" exported="true"/>
+    <component id="z3ip3" name="character_display.xml" path="/" exported="true"/>
+    <component id="z3ip4" name="character_info.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="Panel_Character_Select"/>
+</packageDescription>
