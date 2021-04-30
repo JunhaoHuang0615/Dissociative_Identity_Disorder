@@ -41,7 +41,7 @@ public class BasePanel : Window
     //因为每一个页面都有设置一个Mask，那么他们的入场都可以相同
     //由UIManager来调用
     public void EnterPanel(){
-        Transition t = panelMask.GetTransition("show_mask");
+        Transition t = panelMask.GetTransition("hide_mask");
         t.Play();
 
     }
@@ -54,7 +54,7 @@ public class BasePanel : Window
     }
     //退出页面
     protected void ExitPanel(PlayCompleteCallback callback){
-        Transition t = panelMask.GetTransition("hide_mask");
+        Transition t = panelMask.GetTransition("show_mask");
         t.Play(callback);//这个callback就是在Play方法执行完之后，要执行的方法 方法可以是lanmada表达式
         //如果不使用回调函数，可能会造成动画没有播放完毕
     }

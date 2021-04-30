@@ -28,7 +28,10 @@
       <relation target="n4_zbym" sidePair="left-left,bottom-bottom"/>
       <Button title="开始"/>
     </component>
-    <component id="n19_hdar" name="mask" src="n0i75" pkg="kgrtueft" xy="0,0" hideByEditor="true" touchable="false"/>
-    <component id="n20_hdar" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="0,0" hideByEditor="true" touchable="false"/>
+    <component id="n20_hdar" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="0,0" touchable="false"/>
+    <graph id="n21_r8av" name="White_mask" xy="0,0" size="1920,1080" type="rect"/>
   </displayList>
+  <transition name="WhiteMaskPanel">
+    <item time="0" type="Alpha" target="n21_r8av" tween="true" startValue="1" endValue="0" duration="12"/>
+  </transition>
 </component>

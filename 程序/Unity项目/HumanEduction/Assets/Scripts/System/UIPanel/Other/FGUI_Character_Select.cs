@@ -8,7 +8,7 @@ public class FGUI_Character_Select : BasePanel
     public FGUI_Character_Select(string packageName,
         UIPanelType uIPanelType, UIManager uIManager) : base(packageName,uIPanelType,uIManager)
     {
-
+        
     }
     //要获取某个角色的图片以及文本
 
