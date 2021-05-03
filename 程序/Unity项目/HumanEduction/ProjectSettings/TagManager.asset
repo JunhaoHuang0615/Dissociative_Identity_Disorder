@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PaintPlaner
+  - PaintDot
   layers:
   - Default
   - TransparentFX

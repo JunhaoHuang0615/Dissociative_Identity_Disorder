@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 87441688}
   - component: {fileID: 87441687}
   - component: {fileID: 87441686}
+  - component: {fileID: 87441689}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -178,7 +179,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3863
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -204,6 +205,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &87441689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87441685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abda3aebb1ab16d45a0d43a7228f176f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &533023146
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,9 +426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f544df6cfbb574746a2bca491f640b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushPrefab: {fileID: 4816635053830766622, guid: aa66cf2340d1bb7499f0c8184787962a,
+  brushPrefab: {fileID: 4906770587646176711, guid: c82262aec288bf34586530075f85a9b6,
     type: 3}
   planer: {fileID: 6413945663605472714, guid: ad1b39f906b150f46a5353ef1441aeb5, type: 3}
-  hint: {fileID: 2456581557912200378, guid: 178fbe57bcc38a441b08abf887546a5b, type: 3}
   screenShootCamera: {fileID: 1210846368}
   capturedTexture: {fileID: 8400000, guid: 87fd1d3728a06d143b9ef062820f2c8e, type: 2}

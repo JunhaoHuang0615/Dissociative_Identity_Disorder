@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1000,800">
+  <displayList>
+    <graph id="n0_wgtu" name="bg" xy="0,0" size="1000,800" type="rect" fillColor="#ff999999"/>
+    <graph id="n15_wgtu" name="Text_BG" xy="94,52" size="214,52" type="rect" fillColor="#ffcccccc"/>
+    <graph id="n16_wgtu" name="Text_BG" xy="412,52" size="214,52" type="rect" fillColor="#ffcccccc"/>
+    <graph id="n17_wgtu" name="Text_BG" xy="724,52" size="214,52" type="rect" fillColor="#ffcccccc"/>
+    <text id="n2_wgtu" name="R_Text" xy="37,47" size="84,62" fontSize="30" align="center" vAlign="middle" autoSize="none" text="R&#xA;">
+      <relation target="n0_wgtu" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n5_wgtu" name="R_Value" xy="102,54" size="200,49" input="true" prompt="请输入R的值" maxLength="3" restrict="^[0-9]*$" fontSize="30" vAlign="middle" autoSize="none" text="">
+      <relation target="n2_wgtu" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n6_wgtu" name="G_Text" xy="355,46" size="84,62" fontSize="30" align="center" vAlign="middle" autoSize="none" text="R&#xA;">
+      <relation target="n0_wgtu" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n7_wgtu" name="G_Value" xy="420,53" size="200,49" input="true" prompt="请输入R的值" maxLength="3" restrict="^[0-9]*$" fontSize="30" vAlign="middle" autoSize="none" text="">
+      <relation target="n6_wgtu" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n8_wgtu" name="B_Text" xy="665,46" size="84,62" fontSize="30" align="center" vAlign="middle" autoSize="none" text="R&#xA;">
+      <relation target="n0_wgtu" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n9_wgtu" name="B_Value" xy="730,53" size="200,49" input="true" prompt="请输入R的值" maxLength="3" restrict="^[0-9]*$" fontSize="30" vAlign="middle" autoSize="none" text="">
+      <relation target="n8_wgtu" sidePair="left-left,top-top"/>
+    </text>
+    <loader id="n11_wgtu" name="Sprite_PreView" xy="75,160" size="582,599">
+      <relation target="" sidePair="left-left,bottom-bottom"/>
+    </loader>
+    <component id="n12_wgtu" name="Button_Cancel" src="n0i79" pkg="kgrtueft" xy="756,699">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Button title="取消"/>
+    </component>
+    <component id="n13_wgtu" name="Button_OK" src="n0i79" pkg="kgrtueft" xy="757,614">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Button title="确定生成"/>
+    </component>
+    <component id="n18_wgtu" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="-447,-128" hideByEditor="true" touchable="false"/>
+  </displayList>
+</component>

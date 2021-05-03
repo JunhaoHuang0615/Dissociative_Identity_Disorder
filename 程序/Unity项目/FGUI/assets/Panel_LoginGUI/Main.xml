@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080">
+<component size="1920,1080" opaque="false">
   <displayList>
     <graph id="n4_zbym" name="BG2" xy="1276,244" size="477,559" type="rect">
       <relation target="" sidePair="bottom-bottom,right-right"/>
@@ -29,7 +29,7 @@
       <Button title="开始"/>
     </component>
     <component id="n20_hdar" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="0,0" touchable="false"/>
-    <graph id="n21_r8av" name="White_mask" xy="0,0" size="1920,1080" type="rect"/>
+    <graph id="n21_r8av" name="White_mask" xy="0,0" size="1920,1080" touchable="false" type="rect"/>
   </displayList>
   <transition name="WhiteMaskPanel">
     <item time="0" type="Alpha" target="n21_r8av" tween="true" startValue="1" endValue="0" duration="12"/>

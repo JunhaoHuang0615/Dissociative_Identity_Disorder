@@ -21,9 +21,11 @@ public class BasePanel : Window
         this.currentUIPanel = uIPanelType;
         this.uIManager = uIManager;
         UIPackage.AddPackage("FGUI/"+packageName);
+        
 
     }
 
+    //加载会自动执行的方法，这个是Window里面的方法
     protected override void OnInit()
     {
         //执行共有部分
@@ -63,8 +65,8 @@ public class BasePanel : Window
         uIManager.UIPanelDict[currentUIPanel].Hide();
         uIManager.UIPanelDict[otherType].Show();
         uIManager.UIPanelDict[otherType].EnterPanel();
-
-
-        
+     
     }
+
+
 }

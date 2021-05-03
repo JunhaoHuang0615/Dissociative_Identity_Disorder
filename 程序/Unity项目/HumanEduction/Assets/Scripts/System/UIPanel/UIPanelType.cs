@@ -8,4 +8,7 @@ public enum UIPanelType
     Loading,
     CharacterSelectPanel,
     SettingPanel,
+
+    Drawing,
+    Colorize,
 }

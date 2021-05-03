@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public MessageManager messageManager;
 
+    //Drawing界面
+    private bool isInDrawingScene;
+    public PaintFunction paintFunction;
+
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
         Instance = this;
@@ -60,7 +64,17 @@ public class GameManager : MonoBehaviour
             messageManager = new MessageManager();
         }
 
-        // ==================================关于
+        //这一条会删掉
+        isInDrawingScene = true;
+        //先暂时直接拿到UIManager，之后是要判断才能将这个实例化
+        if(isInDrawingScene == true){
+            paintFunction = FindObjectOfType<PaintFunction>();
+            if(paintFunction == null){
+                print("GameMananger找不到paintFunction");
+            }
+            paintFunction.getUIManager(currentUIManager);
+        }
+
     }
 
     //声音相关

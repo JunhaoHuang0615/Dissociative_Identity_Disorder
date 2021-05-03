@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false">
+  <displayList>
+    <component id="n0_wgtu" name="Button_return" src="n0i79" pkg="kgrtueft" xy="1573,896" scale="1.5,1.5">
+      <relation target="" sidePair=""/>
+      <Button title="反撤销"/>
+    </component>
+    <component id="n1_wgtu" name="Button_Save" src="n0i79" pkg="kgrtueft" xy="1571,783" scale="1.5,1.5">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Button title="保存"/>
+    </component>
+    <component id="n3_wgtu" name="Button_ToColorizePanel" src="n0i79" pkg="kgrtueft" xy="1568,671" scale="1.5,1.5">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Button title="撤销"/>
+    </component>
+    <component id="n4_wgtu" name="GrayLevelSlider" src="wgtu2" xy="662,1012">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Slider max="255"/>
+    </component>
+    <text id="n5_wgtu" name="GrayLevelText" xy="429,1014" size="213,44" alpha="0.96" fontSize="35" autoSize="none" text="灰度控制">
+      <relation target="n4_wgtu" sidePair="right-left,middle-middle"/>
+    </text>
+    <loader id="n7_wgtu" name="Gray_Level_Pre" xy="1284,968" size="113,107" fill="scale"/>
+    <component id="n9_wgtu" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="18,17" hideByEditor="true" touchable="false"/>
+    <component id="n10_vk4k" name="Button_Eraser" src="n0i79" pkg="kgrtueft" xy="1569,562" scale="1.5,1.5">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Button title="橡皮擦"/>
+    </component>
+    <component id="n11_vk4k" name="Button_Pen" src="n0i79" pkg="kgrtueft" xy="1568,458" scale="1.5,1.5">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+      <Button title="画笔"/>
+    </component>
+  </displayList>
+</component>

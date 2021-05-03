@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FairyGUI;
 
 public class UIManager
 {
@@ -43,8 +44,20 @@ public class UIManager
         UIPanelDict.Add(UIPanelType.SettingPanel,new FGUI_SettingPanel("Panel_Setting",UIPanelType.SettingPanel,this));
         UIPanelDict.Add(UIPanelType.CharacterSelectPanel,new FGUI_Character_Select("Panel_Character_Select",
                     UIPanelType.CharacterSelectPanel,this));
+        UIPanelDict.Add(UIPanelType.Drawing,new FGUI_DrawingPanel("Panel_Drawing",
+                    UIPanelType.Drawing,this));
+     UIPanelDict.Add(UIPanelType.Colorize,new FGUI_Colorize("Panel_Colorize",
+                    UIPanelType.Colorize,this));
         //我们游戏初始化首先第一个见面就是Login
-        UIPanelDict[UIPanelType.LoginPanel].Show();
+        //UIPanelDict[UIPanelType.LoginPanel].Show();
+        UIPanelDict[UIPanelType.Drawing].Show();
     }
+
+    //检测是否点击在了UI上
+    public bool isOnFGUI(){
+        return Stage.isTouchOnUI;
+    }
+
+    
 
 }
