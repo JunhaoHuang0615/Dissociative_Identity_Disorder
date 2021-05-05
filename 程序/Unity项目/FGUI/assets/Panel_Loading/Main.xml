@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n2_tdjw" name="maiPic" src="n0i7g" pkg="k6li0d6s" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <component id="n3_tdjw" name="LoadingProgressBar" src="tdjw9" xy="371,920" scale="4,4">
+      <relation target="n2_tdjw" sidePair="center-center,middle-middle"/>
+      <ProgressBar max="100"/>
+    </component>
+    <component id="n4_tdjw" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="0,0" hideByEditor="true"/>
+  </displayList>
+</component>

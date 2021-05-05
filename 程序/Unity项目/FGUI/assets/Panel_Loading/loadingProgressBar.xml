@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="277,32" extention="ProgressBar">
+  <displayList>
+    <image id="n1" name="backround" src="n0i7e" pkg="k6li0d6s" xy="0,0" size="277,32">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n2" name="bar" src="n0i7f" pkg="k6li0d6s" xy="25,-1" size="224,30"/>
+    <movieclip id="n3_tdjw" name="n3" src="n0i7e" pkg="kk4d64or" xy="176,-61">
+      <relation target="n2" sidePair="bottom-top,right-right"/>
+    </movieclip>
+    <text id="n4_tdjw" name="title" xy="116,4" size="52,19" fontSize="16" align="center" vAlign="middle" autoSize="none" text=""/>
+  </displayList>
+  <ProgressBar/>
+</component>

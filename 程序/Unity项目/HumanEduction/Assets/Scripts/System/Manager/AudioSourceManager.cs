@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/***
+ *
+ * Title:"" 项目：AAA
+ * 主题：
+ * Description:
+ * 功能：声音系统，由GameMananger初始化，由它管理
+ *
+ * Date:2021/
+ * Version:0.1v
+ * Coder:Junhao Huang
+ *
+ *
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

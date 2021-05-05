@@ -69,6 +69,7 @@ public class Character : MonoBehaviour
         // rigbody.velocity += Vector3.up*playerJumpHigh;
     }
 
+    //大小跳实现方法
     void playerHighJump(){
         //如果蓄力跳跃的时长还存在，并且还是按下space的状态
         if(jumpTimeCounter > 0){
@@ -88,6 +89,7 @@ public class Character : MonoBehaviour
         return isHit;
 
     }
+    //获得按键输入
 
     public float getH(){
         return h;

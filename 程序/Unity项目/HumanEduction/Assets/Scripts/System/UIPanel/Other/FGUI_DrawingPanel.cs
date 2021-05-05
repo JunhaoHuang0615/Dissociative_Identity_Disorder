@@ -20,6 +20,7 @@ public class FGUI_DrawingPanel : BasePanel
     }
 
       protected override void OnInitPanel(){
+        //动画可能后期不需要
         Transition t = panelMask.GetTransition("hide_mask");
         t.Play();
 

@@ -7,7 +7,7 @@
     <image id="n0i77" name="3aef231d81f3c453d9f14721bc012a03_08.png" path="/Setting/" exported="true"/>
     <image id="n0i7e" name="caiji.png" path="/loading/" exported="true"/>
     <image id="n0i7f" name="caiji2.png" path="/loading/" exported="true"/>
-    <image id="n0i7g" name="3.jpg" path="/loading/" exported="true"/>
+    <image id="n0i7g" name="3.jpg" path="/loading/" exported="true" scale=""/>
     <image id="n0i7h" name="b5_png.png" path="/Setting/" exported="true"/>
     <image id="n0i7i" name="b6_png.png" path="/Setting/" exported="true"/>
     <image id="n0i7j" name="b7(2)_png.png" path="/Setting/" exported="true"/>

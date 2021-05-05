@@ -27,7 +27,9 @@ public class BasePanel : Window
 
     //加载会自动执行的方法，这个是Window里面的方法
     protected override void OnInit()
-    {
+    {   
+        //在所有场景或UI加载之前，都必须先异步加载loading界面
+        
         //执行共有部分
         //Window 下的contentPane就是当前包中最重要的组件
         contentPane = UIPackage.CreateObject(packageName,"Main").asCom;// 前提是这个包有Main组件

@@ -19,7 +19,7 @@ public class PaintFunction : MonoBehaviour
 
     private string path;
 
-    //UIManager
+    //UIManager 想去访问UI的东西时，要找UIMananger，而不能直接找某个Panel
     private UIManager uIManager;
 
     //记录所有brush的位置，用于撤回
@@ -134,13 +134,19 @@ public class PaintFunction : MonoBehaviour
         GameObject brushTemp = HistoryRecord.Pop();
         //gameObject.SetActive(false) 隐藏
         //对于有子物体的 gameObject.SetActiveRecursively(false)
-        if(brushTemp.activeSelf == true){
-            redoGroup.Push(brushTemp);
-            brushTemp.SetActive(false);
+        try{
+
+            if(brushTemp.activeSelf == true){
+                redoGroup.Push(brushTemp);
+                brushTemp.SetActive(false);
+            }
+            else if(brushTemp.activeSelf == false){
+                redoGroup.Push(brushTemp);
+                brushTemp.SetActive(true);
+            }
         }
-        else if(brushTemp.activeSelf == false){
-            redoGroup.Push(brushTemp);
-            brushTemp.SetActive(true);
+        catch{
+            print("没有更多了");
         }
     }
     //反撤销
@@ -159,5 +165,14 @@ public class PaintFunction : MonoBehaviour
         }catch{
             print("没有步骤了");
         }
+    }
+
+    public void refresh(){
+        foreach (GameObject dot in HistoryRecord){
+                dot.SetActive(false);
+                //注意这个物体还是存在于HistorRecord中的
+                HistoryRecord.Push(dot);
+        }
+            
     }
 }
