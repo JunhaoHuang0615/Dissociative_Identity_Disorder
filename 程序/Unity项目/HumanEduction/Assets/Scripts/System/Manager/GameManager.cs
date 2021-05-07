@@ -1,4 +1,5 @@
-﻿/***
+﻿using System;
+/***
  *
  * Title:"" 项目：AAA
  * 主题：
@@ -37,28 +38,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    // ======================  某些不需要贯穿整个游戏的系统的初始化 =============================
+    public Dictionary<GameProgress,MonoBehaviour> progrressManagerDict;
+    public GameProgress currentProgress;
+
+
     //UIManager相关
     [HideInInspector]
-    public GameProgress currentProgress;
     private UIManager currentUIManager;
 
     //声音相关
     [HideInInspector]
     public AudioSourceManager audioManager;
-    public AudioSource audioSource;
-    public AudioClip[] audioClips;
+    public AudioSource BGMAudioSource;
+    public AudioSource gameeffectAudioSource;
+    // public AudioClip[] audioClips;
 
     //信息，文字，语言相关
     [HideInInspector]
     public MessageManager messageManager;
 
-    //Drawing系统
-    private bool isInDrawingScene;
+    //一些系统的实例
+    bool systemFound;
     public PaintFunction paintFunction;
+    public LoginSystem loginSystem;
+
+    //加载系统
+    public AsyncOperation currentLoadScene;
 
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
         Instance = this;
+
         //=================================关于UIManager =====================================
         //加载资源包,加载完成资源包后，需要异步加载登录界面
         UIPackage.AddPackage("FGUI/Res_Main");
@@ -69,41 +81,99 @@ public class GameManager : MonoBehaviour
 
         //设置自适应
         GRoot.inst.SetContentScaleFactor(1920,1080,UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
-        //初始化各个系统，并且按照顺序
+        //各个系统，并且按照顺序
         if(currentUIManager == null){
             currentUIManager = new UIManager();
             currentUIManager.OutGameMange();
         }
-        if(audioManager == null){
-            audioManager = new AudioSourceManager(this);
-        }
+
+        // ================================================= 关于剧情 ==========================================
+
         if(messageManager == null){
             messageManager = new MessageManager();
         }
 
-        isInDrawingScene = false;
+        // ====================================================== 关于声音 ============================================
+        if(audioManager == null){
+            audioManager = new AudioSourceManager(this);
+            BGMAudioSource = GameObject.Find("BGMAudio").GetComponent<AudioSource>();
+            gameeffectAudioSource = GameObject.Find("GameAudio").GetComponent<AudioSource>();
+
+        }
+        currentProgress = GameProgress.LoginSystem;
 
     }
 
     private void Update() {
          //什么时候加载这个系统？
-        //先暂时直接拿到UIManager，之后是要判断才能将这个实例化
-        if(isInDrawingScene == true){
-            paintFunction = FindObjectOfType<PaintFunction>();
-            if(paintFunction == null){
-                print("GameMananger找不到paintFunction");
+        //Drawing系统初始化 ================================
+        //根据玩家目前进入的进程来判断
+        if(currentProgress == GameProgress.Drawing && systemFound == false){
+            try{
+                paintFunction = FindObjectOfType<PaintFunction>();
+                paintFunction.getUIManager(currentUIManager);
+                print("GameMananger找到paintFunction");
+            }catch
+            {
+                print("重试获取paintMananger");
             }
-            paintFunction.getUIManager(currentUIManager);
+
+            // if(progrressManagerDict.ContainsKey(currentProgress)==false){
+            //     progrressManagerDict.Add(currentProgress,paintFunction);
+            // }else{
+            //     progrressManagerDict[currentProgress] = paintFunction;
+            // }
+        //疑问？？？
+        //第二次加入时，paintFunction可能会被销毁,或者和当前存在于GameMananger的系统不同
+            
+        }
+        //加载登录系统
+         if(currentProgress == GameProgress.LoginSystem && systemFound == false){
+             try{
+                loginSystem = FindObjectOfType<LoginSystem>();
+                loginSystem.getUIManager(currentUIManager);
+                systemFound = true;
+                print("找到Loginsystem");
+             }
+             catch{
+                print("重试获取Loginsystem");
+             }
+            // if(progrressManagerDict.ContainsKey(currentProgress)==false){
+            //     progrressManagerDict.Add(currentProgress,loginSystem);
+            // }else{
+            //     progrressManagerDict[currentProgress] = loginSystem;
+            // }
+            
         }
 
+
+
+        //================= 关于loading界面的控制 ========================
+        if(currentLoadScene!=null)
+        currentUIManager.changeProgressBarValue(CommonGComp.LoadingProgressBar,currentLoadScene.progress*100);
+        // if(currentLoadScene!=null)
+        //     Debug.Log(GameManager.Instance.currentLoadScene.progress * 100);
+        if(currentLoadScene!=null && currentLoadScene.progress == 1){
+            currentUIManager.closeLoadingUI();
+            currentLoadScene = null;
+        }
     }
 
     //声音相关
 
 
-    //控制场景加载
-    public void AsyncLoadScene(string sceneName){
-        SceneManager.LoadSceneAsync(sceneName);
+    //控制场景加载,想去的场景，和要加载的进程
+    public void AsyncLoadScene(string sceneName,GameProgress name){
+        currentLoadScene = SceneManager.LoadSceneAsync(sceneName);
+        currentProgress = name;
+        systemFound = false;
     }
-    
+
+    //加载场景时，有的场景需要Loading界面过渡时可以使用这个方法
+    public void LoadingToScene(string targetSceneName,GameProgress name){
+        //loading的场景是哪一个
+        AsyncLoadScene(targetSceneName,name);
+        currentUIManager.loadingUI();
+    }
+
 }

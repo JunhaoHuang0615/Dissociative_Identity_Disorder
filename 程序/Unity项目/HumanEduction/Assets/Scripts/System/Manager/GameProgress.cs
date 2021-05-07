@@ -7,5 +7,9 @@ public enum GameProgress
     InGame,
 
     OutGame,
+    Drawing,
+    LoginSystem,
+    CharacterSelect,
+
 
 }

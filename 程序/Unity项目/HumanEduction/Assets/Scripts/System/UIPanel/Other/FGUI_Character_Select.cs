@@ -16,22 +16,21 @@ public class FGUI_Character_Select : BasePanel
     private GComponent chaImgComp;
     private GComponent chaInfoComp;
 
-    private Character_Linked_File character_Linked_File;
- 
+    private Character_Linked_File character_Linked_File; //从GameMananger里面拿，GameMananger可以从其他地方拿
 
-    private void Awake() {
-        // //Main组件可以直接显示（角色选择窗口）
-        // GRoot.inst.SetContentScaleFactor(1920,1080);
-        // // GRoot.inst.MakeFullScreen();
-        // UIPackage.AddPackage("FGUI/Character_Select");
-        // //创建UIPanel ， 也可以把这个总的UICOMPONENE当作属性
-        // GComponent component = UIPackage.CreateObject("Character_Select","Main").asCom;
-        // GRoot.inst.AddChild(component);
+    private GButton btn_returnmenu;
+    protected override void OnInitPanel(){
+        //动画可能后期不需要
+        Transition t = panelMask.GetTransition("hide_mask");
+        t.Play();
+        chaImgComp = UIPackage.CreateObject("Panel_Character_Select","character_display").asCom;
+        chaInfoComp = UIPackage.CreateObject("Panel_Character_Select","character_info").asCom;
+        uIManager.commonComp.Add(CommonGComp.ChaImgComp,chaImgComp);
+        uIManager.commonComp.Add(CommonGComp.ChaInfoComp,chaInfoComp);
 
-        // chaImgComp = UIPackage.CreateObject("Character_Select","character_display").asCom;
-        // chaInfoComp = UIPackage.CreateObject("Character_Select","character_info").asCom;
+        btn_returnmenu = contentPane.GetChild("btn_mainMenu").asButton;
+        btn_returnmenu.onClick.Add(returnMainMenu);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -63,16 +62,21 @@ public class FGUI_Character_Select : BasePanel
         t.Play();
     }
 
-    void displayInfo(){
-        GRoot.inst.AddChild(chaInfoComp);
+    public void displayInfo(){
+        contentPane.AddChild(chaInfoComp);
+        Transition t = chaImgComp.GetTransition("enter");
+        t.Play();
     }
 
     //注册事件，如按钮，需要传递有参数的方法时，需要用到lamada表达式
-    // void displayImg(GComponent targetComp){
-    //     GRoot.inst.AddChild(targetComp);
-    //     Transition t = targetComp.GetTransition("t0");
-    //     t.Play();
-    // }
+    public void displayImg(GComponent targetComp){
+        contentPane.AddChild(targetComp);
+        Transition t = targetComp.GetTransition("t0");
+        t.Play();
+    }
     //在注册按钮事件时，需要使用：例如组件targetComp中有一个按钮btn1，给他注册事件
     //targetComp.GetChild("btn1").onClick.Add(  ()=>{displayImg(chuandiComp);}    )
+    private void returnMainMenu(){
+        ToOtherPanel(UIPanelType.LoginPanel,true,Constants.SceneLogin,GameProgress.LoginSystem);
+    }
 }

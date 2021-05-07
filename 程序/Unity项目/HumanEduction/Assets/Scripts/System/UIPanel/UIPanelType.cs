@@ -11,4 +11,5 @@ public enum UIPanelType
 
     Drawing,
     Colorize,
+    Tips,
 }

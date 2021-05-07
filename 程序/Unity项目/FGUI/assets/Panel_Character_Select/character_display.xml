@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080">
+<component size="1920,1080" opaque="false">
   <displayList>
     <loader id="n3_z3ip" name="n3" xy="81,281" size="560,700" url="ui://mu7ue7b5z3ip5" align="center" vAlign="middle">
       <relation target="" sidePair="left-left,bottom-bottom"/>

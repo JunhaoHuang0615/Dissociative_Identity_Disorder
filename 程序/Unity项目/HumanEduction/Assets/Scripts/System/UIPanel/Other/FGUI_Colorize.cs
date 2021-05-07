@@ -9,14 +9,4 @@ public class FGUI_Colorize : BasePanel
     {
         
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

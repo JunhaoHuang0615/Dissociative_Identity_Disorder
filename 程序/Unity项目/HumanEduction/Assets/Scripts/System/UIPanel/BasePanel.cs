@@ -28,8 +28,6 @@ public class BasePanel : Window
     //加载会自动执行的方法，这个是Window里面的方法
     protected override void OnInit()
     {   
-        //在所有场景或UI加载之前，都必须先异步加载loading界面
-        
         //执行共有部分
         //Window 下的contentPane就是当前包中最重要的组件
         contentPane = UIPackage.CreateObject(packageName,"Main").asCom;// 前提是这个包有Main组件
@@ -51,9 +49,9 @@ public class BasePanel : Window
     }
 
     //进入其他页面
-    protected void ToOtherPanel(UIPanelType otherType){ //传递想要跳转的UIPanel过来
+    protected void ToOtherPanel(UIPanelType otherType,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
         ExitPanel(()=>{
-            ChangePanelCallBack(otherType);
+            ChangePanelCallBack(otherType,sceneName,progrossname);
         });
     }
     //退出页面
@@ -63,12 +61,30 @@ public class BasePanel : Window
         //如果不使用回调函数，可能会造成动画没有播放完毕
     }
 
-    protected void ChangePanelCallBack(UIPanelType otherType){
+    protected void ChangePanelCallBack(UIPanelType otherType,string sceneName, GameProgress progrossname){
         uIManager.UIPanelDict[currentUIPanel].Hide();
+        GameManager.Instance.AsyncLoadScene(sceneName,progrossname);
         uIManager.UIPanelDict[otherType].Show();
         uIManager.UIPanelDict[otherType].EnterPanel();
      
     }
+    //是否需要load场景
+        protected void ChangePanelCallBack(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){
+        uIManager.UIPanelDict[currentUIPanel].Hide();
+        GameManager.Instance.LoadingToScene(sceneName,progrossname);
+        uIManager.UIPanelDict[otherType].Show();
+        uIManager.UIPanelDict[otherType].EnterPanel();
+     
+    }
+    protected void ToOtherPanel(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
+        ExitPanel(()=>{
+            ChangePanelCallBack(otherType,loadOrNot,sceneName,progrossname);
+        });
+    }
+        //     //在加载登录场景之前之前，都必须先异步加载loading界面，loading的目标场景就是login场景
+        // //只是场景进入，但是要注意，场景里面是没有UI的
+        // GameManager.Instance.LoadingToScene(Constants.SceneLogin,GameProgress.LoginSystem);
+
 
 
 }

@@ -1,0 +1,55 @@
+﻿/***
+ *
+ * Title:"" 项目：AAA
+ * 主题：
+ * Description:
+ * 功能：玩家的登录界面系统管理，由GameMananger初始化
+ *      只写关于System的东西，数据获取要通过GameMananger来得到
+ * Date:2021/
+ * Version:0.1v
+ * Coder:Junhao Huang
+ * email:huangjunhao0615@gmail.com
+ *
+ */
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LoginSystem : MonoBehaviour
+{
+    private UIManager uIManager;
+
+    public string accountNumber;
+    public string passwordNumber;
+
+
+    public void getUIManager(UIManager uIManager){
+        this.uIManager = uIManager;
+    }
+
+    private void Awake() {
+        //检查玩家电脑本地是否已经含有了账号了密码的数据
+        if(PlayerPrefs.HasKey("Acct")&&PlayerPrefs.HasKey("Pass")){
+            accountNumber = PlayerPrefs.GetString("Acct");
+            passwordNumber = PlayerPrefs.GetString("Pass");
+        }
+        else{
+            accountNumber = "";
+            passwordNumber = "";
+        }
+        GameManager.Instance.audioManager.ChangeBGM(BGMType.bgmtype1);
+                //Perhaps:
+        //GameManager去拿数据，由数据来更新
+    // uIManager.commonInputText[CommonGComp.AccountTextInput].text = accountNumber;
+    // uIManager.commonInputText[CommonGComp.PasswordTextInput].text = passwordNumber;
+    }
+
+    private void Update() {
+        //Todo:
+        //记录玩家第一次输入的账号密码
+
+        //控制UI
+
+    }
+}
