@@ -52,4 +52,15 @@ public class LoginSystem : MonoBehaviour
         //控制UI
 
     }
+
+    public bool checkUsernameEmpty(){
+        bool isempty;
+        if(uIManager.commonInputText[CommonGComp.AccountTextInput].text == "" || uIManager.commonInputText[CommonGComp.AccountTextInput].text==null){
+            uIManager.tipsText.text  = "账号不能为空";
+            isempty = true;
+        }else{
+            isempty = false;
+        }
+        return isempty;
+    }
 }

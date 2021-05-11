@@ -1,0 +1,118 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\ServerStart\\ServerStart.csproj": {}
+  },
+  "projects": {
+    "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\Protocol\\Protocol.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\Protocol\\Protocol.csproj",
+        "projectName": "Protocol",
+        "projectPath": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\Protocol\\Protocol.csproj",
+        "packagesPath": "C:\\Users\\Wulei\\.nuget\\packages\\",
+        "outputPath": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\Protocol\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Wulei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\ServerStart\\ServerStart.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\ServerStart\\ServerStart.csproj",
+        "projectName": "ServerStart",
+        "projectPath": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\ServerStart\\ServerStart.csproj",
+        "packagesPath": "C:\\Users\\Wulei\\.nuget\\packages\\",
+        "outputPath": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\ServerStart\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Wulei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\Protocol\\Protocol.csproj": {
+                "projectPath": "F:\\人格离析\\人格离析\\程序\\Unity项目\\Server\\ServerAPP\\Protocol\\Protocol.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

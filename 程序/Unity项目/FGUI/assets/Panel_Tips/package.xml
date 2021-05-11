@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="vy12utwn" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="e1kn0" name="Main.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="Panel_Tips"/>
+</packageDescription>

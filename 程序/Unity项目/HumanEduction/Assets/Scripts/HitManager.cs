@@ -13,6 +13,7 @@ public class HitManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //摄像机向鼠标为发射一条射线
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit,1000)){ //1000码距离之内碰到的物体，判断是否有碰到物体 

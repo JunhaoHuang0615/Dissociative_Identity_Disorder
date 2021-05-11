@@ -18,5 +18,5 @@ using UnityEngine;
 
 public class CharacterSelectSystem
 {
-
+    //TODO检测玩家是否已经创建了角色
 }

@@ -29,7 +29,7 @@ public class FGUI_Character_Select : BasePanel
         uIManager.commonComp.Add(CommonGComp.ChaInfoComp,chaInfoComp);
 
         btn_returnmenu = contentPane.GetChild("btn_mainMenu").asButton;
-        btn_returnmenu.onClick.Add(returnMainMenu);
+        btn_returnmenu.onClick.Add(enterMainGame);
     }
     // Update is called once per frame
     void Update()
@@ -78,5 +78,9 @@ public class FGUI_Character_Select : BasePanel
     //targetComp.GetChild("btn1").onClick.Add(  ()=>{displayImg(chuandiComp);}    )
     private void returnMainMenu(){
         ToOtherPanel(UIPanelType.LoginPanel,true,Constants.SceneLogin,GameProgress.LoginSystem);
+    }
+
+    private void enterMainGame(){
+        ToOtherPanel(UIPanelType.Ingame,true,Constants.SceneMainGame,GameProgress.InGame);
     }
 }

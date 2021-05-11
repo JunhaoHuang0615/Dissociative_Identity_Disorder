@@ -20,5 +20,6 @@ public class Constants
 {   
     public const string SceneLogin = "LoginUI";
     public const string SceneCharacter = "CharacterSelectSce";
+    public const string SceneMainGame = "GameMain";
 
 }

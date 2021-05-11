@@ -23,15 +23,24 @@ public class FGUI_Login : BasePanel
         //Enterpanel这个方法只有在切换的时候使用
         Transition t = panelMask.GetTransition("hide_mask");
         //开始按钮
+        Debug.Log("Login");
         btn_start = contentPane.GetChild("btn_start").asButton;
-        btn_start.onClick.Add(gameStartBtn);
+        btn_start.onClick.Add(()=>{
+
+            if(GameManager.Instance.loginSystem.checkUsernameEmpty()==true){
+                uIManager.tipsWindow.showTipsPanel();
+            }else{
+                gameStartBtn();
+            }
+
+        });
         t.Play();
 
         //在UIMananger中注册
         accountTextBox = contentPane.GetChild("accountinput").asTextInput;
         passwordTextBox = contentPane.GetChild("passwordinput").asTextInput;
-        uIManager.commonInputText.Add(CommonGComp.AccountTextInput,passwordTextBox);
-        uIManager.commonInputText.Add(CommonGComp.PasswordTextInput,accountTextBox);
+        uIManager.commonInputText.Add(CommonGComp.AccountTextInput,accountTextBox);
+        uIManager.commonInputText.Add(CommonGComp.PasswordTextInput,passwordTextBox);
         // accountTextBox.text = GameManager.Instance.loginSystem.accountNumber;
         // passwordTextBox.text = GameManager.Instance.loginSystem.passwordNumber;
         }
