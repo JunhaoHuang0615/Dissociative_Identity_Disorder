@@ -25,12 +25,21 @@ using System.Threading.Tasks;
     public void Init()
     {
         //数据库初始化
+        DBMgr.Instance.Init();
 
         //服务层初始化
+        CacheSvc.Instance.Init();
         NetSvc.Instance.Init();
+
 
         //业务系统
         LoginSys.Instance.Init();
 
+        
+
+    }
+    public void Update()
+    {
+        NetSvc.Instance.Update();
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PENet;
 using Protocol;
-
+//网络会话Session
    public class ServerSession : PESession<NetMsg>
     {
         protected override void OnConnected()
@@ -16,10 +16,9 @@ using Protocol;
     protected override void OnReciveMsg(NetMsg msg)
     {
         base.OnReciveMsg(msg);
-        PETool.LogMsg("Message Receieved:"+ msg.text);
-        SendMsg(new NetMsg { 
-            text = "SrvReq" + msg.text
-        });
+        PETool.LogMsg("Receieved CMD:"+ msg.cmd);
+        MsgPack msgPack = new MsgPack(msg,this);
+        NetSvc.Instance.AddMsyQue(msgPack);
     }
 
     protected override void OnDisConnected()

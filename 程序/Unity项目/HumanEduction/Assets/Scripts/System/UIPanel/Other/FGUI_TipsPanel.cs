@@ -22,7 +22,7 @@ public class FGUI_TipsPanel : Window
     GTextField tipsText;
     UIManager uIManager; 
     Transition enterAnim;
-    public bool isShowing = false;
+    public bool isPanelShowing = false;
 
     public FGUI_TipsPanel(UIManager uIManager){
         this.uIManager = uIManager;
@@ -42,12 +42,13 @@ public class FGUI_TipsPanel : Window
     
     //
     public void showTipsPanel(){
-        if(!isShowing){
-            isShowing = true;
+        if(!isPanelShowing)
+        {
+            isPanelShowing = true;
             this.Show();
             enterAnim.Play(()=>{
                 this.Hide();
-                isShowing = false;
+                isPanelShowing = false;
             }
             );
         }

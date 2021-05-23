@@ -10,9 +10,9 @@
     </text>
   </displayList>
   <transition name="enter">
-    <item time="0" type="Alpha" target="n1_e1kn" tween="true" startValue="0" endValue="1" duration="24"/>
-    <item time="0" type="Alpha" target="n0_e1kn" tween="true" startValue="0" endValue="1" duration="24"/>
     <item time="0" type="Alpha" target="n3_e1kn" tween="true" startValue="0" endValue="1" duration="24"/>
+    <item time="0" type="Alpha" target="n0_e1kn" tween="true" startValue="0" endValue="1" duration="24"/>
+    <item time="0" type="Alpha" target="n1_e1kn" tween="true" startValue="0" endValue="1" duration="24"/>
     <item time="0" type="XY" target="n1_e1kn" tween="true" startValue="1923,0" endValue="1521,0" duration="24"/>
     <item time="24" type="Alpha" target="n1_e1kn" tween="true" startValue="1" endValue="1" duration="48"/>
     <item time="24" type="Alpha" target="n0_e1kn" tween="true" startValue="1" endValue="1" duration="48"/>

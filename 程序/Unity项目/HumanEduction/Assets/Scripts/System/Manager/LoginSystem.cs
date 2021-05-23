@@ -15,12 +15,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Protocol;
 
 public class LoginSystem : MonoBehaviour
 {
     private UIManager uIManager;
-
+    [HideInInspector]
     public string accountNumber;
+    [HideInInspector]
     public string passwordNumber;
 
 
@@ -28,7 +30,7 @@ public class LoginSystem : MonoBehaviour
         this.uIManager = uIManager;
     }
 
-    private void Awake() {
+    public void Work() {
         //检查玩家电脑本地是否已经含有了账号了密码的数据
         if(PlayerPrefs.HasKey("Acct")&&PlayerPrefs.HasKey("Pass")){
             accountNumber = PlayerPrefs.GetString("Acct");
@@ -62,5 +64,31 @@ public class LoginSystem : MonoBehaviour
             isempty = false;
         }
         return isempty;
+    }
+    //向服务器发送请求
+    public void ConnectToNetServer()
+    {
+        NetMsg message = new NetMsg {
+            //必须是类里面的成员
+            cmd = (int)CMD.ReqLogin,
+            reqLogin = new ReqLogin
+            {
+                account = accountNumber,
+                password = passwordNumber
+            }
+        };
+        NetSvc.Instance.SendMsg(message);
+    }
+
+    public void HandleServerData(NetMsg netMsg)
+    {
+        print("收到服务器回复");
+        GameManager.Instance.SetPlayerData(netMsg.rspLogin);
+        GameManager.Instance.currentUIManager.UIPanelDict[UIPanelType.LoginPanel].ToOtherPanel(UIPanelType.CharacterSelectPanel, true, Constants.SceneCharacter, GameProgress.CharacterSelect);
+        if(GameManager.Instance.characterSelectSystem == null)
+        {
+            print("null");
+        }
+        GameManager.Instance.characterSelectSystem.HandlePlayerData(netMsg);
     }
 }

@@ -66,7 +66,7 @@ public class UIManager
             ClearDict();
         }
         //注册所有的UIPanel
-
+        tipsWindow = new FGUI_TipsPanel(this);
         UIPanelDict.Add(UIPanelType.Loading,new FGUI_loading("Panel_Loading",UIPanelType.Loading,this));
         UIPanelDict.Add(UIPanelType.LoginPanel,new FGUI_Login("Panel_LoginGUI",UIPanelType.LoginPanel,this));
         UIPanelDict.Add(UIPanelType.SettingPanel,new FGUI_SettingPanel("Panel_Setting",UIPanelType.SettingPanel,this));
@@ -78,7 +78,7 @@ public class UIManager
                     UIPanelType.Colorize,this));   
         //我们游戏初始化首先第一个见面就是Login
         UIPanelDict[UIPanelType.LoginPanel].Show();
-        tipsWindow = new FGUI_TipsPanel(this);
+        
         
     }
 
@@ -90,6 +90,7 @@ public class UIManager
     //播放Loading的方法,很多场景载入之前会用到
     //还要传入场景UI的载入百分比
     public void loadingUI(){
+        Debug.Log("Loading界面出来了");
         UIPanelDict[UIPanelType.Loading].Show();
     }
     public void closeLoadingUI(){
@@ -113,7 +114,25 @@ public class UIManager
             cb();
         }
     }
+    // ====================== Tips Window Method ======================================
+    public void showTipsWindow(string text)
+    {
+        tipsText.text = text;
+        tipsWindow.showTipsPanel();
+    }
+    public void showTipsWindow()
+    {
+        tipsWindow.showTipsPanel();
+    }
+    public void changeTipsText(string text)
+    {
+        tipsText.text = text;
+    }
 
+    public void tipsWindowFront()
+    {
+        tipsWindow.BringToFront();
+    }
     
 
 }

@@ -49,7 +49,7 @@ public class BasePanel : Window
     }
 
     //进入其他页面
-    protected void ToOtherPanel(UIPanelType otherType,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
+    public void ToOtherPanel(UIPanelType otherType,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
         ExitPanel(()=>{
             ChangePanelCallBack(otherType,sceneName,progrossname);
         });
@@ -65,18 +65,22 @@ public class BasePanel : Window
         uIManager.UIPanelDict[currentUIPanel].Hide();
         GameManager.Instance.AsyncLoadScene(sceneName,progrossname);
         uIManager.UIPanelDict[otherType].Show();
+        if (uIManager.tipsWindow.isPanelShowing)
+            uIManager.tipsWindowFront();
         uIManager.UIPanelDict[otherType].EnterPanel();
      
     }
     //是否需要load场景
-        protected void ChangePanelCallBack(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){
+    protected void ChangePanelCallBack(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){
         uIManager.UIPanelDict[currentUIPanel].Hide();
         GameManager.Instance.LoadingToScene(sceneName,progrossname);
         uIManager.UIPanelDict[otherType].Show();
+        if (uIManager.tipsWindow.isPanelShowing)
+            uIManager.tipsWindowFront();
         uIManager.UIPanelDict[otherType].EnterPanel();
      
     }
-    protected void ToOtherPanel(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
+    public void ToOtherPanel(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
         ExitPanel(()=>{
             ChangePanelCallBack(otherType,loadOrNot,sceneName,progrossname);
         });

@@ -12,7 +12,6 @@ F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Ser
 F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Server\dll\netcoreapp3.1\Protocol.deps.json
 F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Server\dll\netcoreapp3.1\Protocol.dll
 F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Server\dll\netcoreapp3.1\Protocol.pdb
-F:\人格离析\人格离析\程序\Unity项目\Server\ServerAPP\Protocol\obj\Debug\netcoreapp3.1\Protocol.csprojAssemblyReference.cache
 F:\人格离析\人格离析\程序\Unity项目\Server\ServerAPP\Protocol\obj\Debug\netcoreapp3.1\Protocol.AssemblyInfoInputs.cache
 F:\人格离析\人格离析\程序\Unity项目\Server\ServerAPP\Protocol\obj\Debug\netcoreapp3.1\Protocol.AssemblyInfo.cs
 F:\人格离析\人格离析\程序\Unity项目\Server\ServerAPP\Protocol\obj\Debug\netcoreapp3.1\Protocol.csproj.CoreCompileInputs.cache
@@ -22,3 +21,7 @@ F:\人格离析\人格离析\程序\Unity项目\Server\ServerAPP\Protocol\obj\De
 F:\人格离析\人格离析\程序\Unity项目\dll\netcoreapp3.1\Protocol.deps.json
 F:\人格离析\人格离析\程序\Unity项目\dll\netcoreapp3.1\Protocol.dll
 F:\人格离析\人格离析\程序\Unity项目\dll\netcoreapp3.1\Protocol.pdb
+F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Service\Net\netcoreapp3.1\Protocol.deps.json
+F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Service\Net\netcoreapp3.1\Protocol.dll
+F:\人格离析\人格离析\程序\Unity项目\HumanEduction\Assets\Scripts\Service\Net\netcoreapp3.1\Protocol.pdb
+F:\人格离析\人格离析\程序\Unity项目\Server\ServerAPP\Protocol\obj\Debug\netcoreapp3.1\Protocol.csprojAssemblyReference.cache

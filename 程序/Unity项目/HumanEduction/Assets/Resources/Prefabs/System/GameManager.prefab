@@ -264,6 +264,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3298030789628213193}
   - component: {fileID: 5965597903508534117}
+  - component: {fileID: 4485948859519522197}
+  - component: {fileID: 7375380874709690595}
+  - component: {fileID: 3161626277429128810}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -300,7 +303,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentProgress: 0
-  audioSource: {fileID: 0}
-  audioClips: []
   paintFunction: {fileID: 0}
   loginSystem: {fileID: 0}
+  characterSelectSystem: {fileID: 0}
+  shouldShowWindow: 0
+  BGMAudioSource: {fileID: 0}
+  gameeffectAudioSource: {fileID: 0}
+--- !u!114 &4485948859519522197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315171071880259882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb680a7911687aa4f8d9f877e057459e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7375380874709690595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315171071880259882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe90bf95ea0c714d86dc71da4073934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accountNumber: 
+  passwordNumber: 
+--- !u!114 &3161626277429128810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315171071880259882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5809e8273fb1d9c44b38524442ecbd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

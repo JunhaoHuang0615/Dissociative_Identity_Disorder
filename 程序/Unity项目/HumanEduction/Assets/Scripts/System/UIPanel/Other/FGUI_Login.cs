@@ -23,14 +23,13 @@ public class FGUI_Login : BasePanel
         //Enterpanel这个方法只有在切换的时候使用
         Transition t = panelMask.GetTransition("hide_mask");
         //开始按钮
-        Debug.Log("Login");
         btn_start = contentPane.GetChild("btn_start").asButton;
         btn_start.onClick.Add(()=>{
 
             if(GameManager.Instance.loginSystem.checkUsernameEmpty()==true){
                 uIManager.tipsWindow.showTipsPanel();
             }else{
-                gameStartBtn();
+                GameManager.Instance.loginSystem.ConnectToNetServer();
             }
 
         });
@@ -45,8 +44,5 @@ public class FGUI_Login : BasePanel
         // passwordTextBox.text = GameManager.Instance.loginSystem.passwordNumber;
         }
 
-    private void gameStartBtn(){
-        ToOtherPanel(UIPanelType.CharacterSelectPanel,true,Constants.SceneCharacter,GameProgress.CharacterSelect);
-    }
 
 }

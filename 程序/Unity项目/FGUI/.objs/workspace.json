@@ -1,8 +1,5 @@
 {
-	"active_doc": [
-		"mu7ue7b5",
-		"z3ip4"
-	],
+	"hidden_packages": [],
 	"docs": [
 		"e8ley9yi",
 		"zbym2",
@@ -55,6 +52,10 @@
 		"vy12utwn",
 		"e1kn0"
 	],
+	"active_doc": [
+		"mu7ue7b5",
+		"z3ip3"
+	],
 	"expanded_nodes": [
 		"kmng9fuw",
 		"/",
@@ -82,6 +83,5 @@
 		"/",
 		"k6li0d6s",
 		"/"
-	],
-	"hidden_packages": []
+	]
 }

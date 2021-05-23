@@ -15,8 +15,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Protocol;
 
-public class CharacterSelectSystem
-{
+public class CharacterSelectSystem : MonoBehaviour
+{   
+    public void Work()
+    {
+
+    }
     //TODO检测玩家是否已经创建了角色
+    public void HandlePlayerData(NetMsg msg)
+    {
+        if(msg.rspLogin.playerData.name == "")
+        {
+           //创建角色界面
+           
+        }
+        else
+        {
+           //直接加载主城场景
+           //直接ChangetoOther
+        }
+    }
 }
+
