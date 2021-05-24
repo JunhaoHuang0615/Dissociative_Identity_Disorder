@@ -1,0 +1,13 @@
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\Server_Build.exe.config
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\Server_Build.exe
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\Server_Build.pdb
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\MySql.Data.dll
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\PESocket.dll
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\Protocol.dll
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\Protocol.pdb
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\bin\Debug\PESocket.pdb
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\obj\Debug\Server_Build.csprojAssemblyReference.cache
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\obj\Debug\Server_Build.csproj.CoreCompileInputs.cache
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\obj\Debug\Server_Build.csproj.CopyComplete
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\obj\Debug\Server_Build.exe
+E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Server_Build\obj\Debug\Server_Build.pdb

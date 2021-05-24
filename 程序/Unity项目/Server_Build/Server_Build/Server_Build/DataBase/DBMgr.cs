@@ -29,7 +29,7 @@ class DBMgr
 
     public void Init()
     {
-        conn = new MySqlConnection("server=localhost;User Id = root;passwrod=;Database=dissociation_of_personality;Charset = utf8");
+        conn = new MySqlConnection("server=localhost;User Id = root;password=;Database=dissociation_of_personality;Charset = utf8");
         conn.Open();
         PECommon.Log("DB Init");
     }
@@ -57,7 +57,7 @@ class DBMgr
                     {
                         id = reader.GetInt32("id"),
                         name = reader.GetString("name"),
-                        lv = reader.GetInt32("level"),
+                        lv = reader.GetInt32("lv"),
                         exp = reader.GetInt32("exp"),
                         power = reader.GetInt32("power"),
                         coin = reader.GetInt32("coin"),
@@ -69,10 +69,10 @@ class DBMgr
         }
         catch (Exception e)
         {
-            PECommon.Log("Query PlayerData By Acct&Pass Error:" + e,PECommon.LogType.Error);
+            PECommon.Log("Query PlayerData By Acct&Pass Error:" + e, PECommon.LogType.Error);
         }
         finally
-        {   
+        {
             //必须要关闭，否则不能重新进行其他操作
             if (reader != null)
             {
@@ -82,7 +82,7 @@ class DBMgr
             {
                 //不存在账号数据，创建新的默认账号数据，并返回
                 playerData = new PlayerData
-                {   
+                {
                     //账号初始数据
                     id = -1, //因为我们还不知道具体的id回事多少
                     name = "",
@@ -109,7 +109,7 @@ class DBMgr
         try
         {
             MySqlCommand cmd = new MySqlCommand(
-                "insert into account set acct=@acct,pass =@pass,name=@name,level=@level,exp=@exp,power=@power,coin=@coin,diamond=@diamond", conn);
+                "insert into account set acct=@acct,pass =@pass,name=@name,lv=@lv,exp=@exp,power=@power,coin=@coin,diamond=@diamond", conn);
             cmd.Parameters.AddWithValue("acct", acct);
             cmd.Parameters.AddWithValue("pass", pass);
             cmd.Parameters.AddWithValue("name", pd.name);

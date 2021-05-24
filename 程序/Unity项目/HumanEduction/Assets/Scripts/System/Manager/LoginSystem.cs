@@ -41,10 +41,7 @@ public class LoginSystem : MonoBehaviour
             passwordNumber = "";
         }
         GameManager.Instance.audioManager.ChangeBGM(BGMType.bgmtype1);
-                //Perhaps:
-        //GameManager去拿数据，由数据来更新
-    // uIManager.commonInputText[CommonGComp.AccountTextInput].text = accountNumber;
-    // uIManager.commonInputText[CommonGComp.PasswordTextInput].text = passwordNumber;
+                
     }
 
     private void Update() {
@@ -62,6 +59,10 @@ public class LoginSystem : MonoBehaviour
             isempty = true;
         }else{
             isempty = false;
+            //Perhaps:
+            //GameManager去拿数据，由数据来更新
+            accountNumber= uIManager.commonInputText[CommonGComp.AccountTextInput].text;
+            passwordNumber = uIManager.commonInputText[CommonGComp.PasswordTextInput].text;
         }
         return isempty;
     }
@@ -82,7 +83,6 @@ public class LoginSystem : MonoBehaviour
 
     public void HandleServerData(NetMsg netMsg)
     {
-        print("收到服务器回复");
         GameManager.Instance.SetPlayerData(netMsg.rspLogin);
         GameManager.Instance.currentUIManager.UIPanelDict[UIPanelType.LoginPanel].ToOtherPanel(UIPanelType.CharacterSelectPanel, true, Constants.SceneCharacter, GameProgress.CharacterSelect);
         if(GameManager.Instance.characterSelectSystem == null)

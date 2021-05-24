@@ -38,6 +38,11 @@ public class FGUI_Login : BasePanel
         //在UIMananger中注册
         accountTextBox = contentPane.GetChild("accountinput").asTextInput;
         passwordTextBox = contentPane.GetChild("passwordinput").asTextInput;
+        accountTextBox.onChanged.Add(() =>
+            {
+                Debug.Log("文本发生了改变，内容是" + uIManager.commonInputText[CommonGComp.AccountTextInput].text);
+            }
+        );
         uIManager.commonInputText.Add(CommonGComp.AccountTextInput,accountTextBox);
         uIManager.commonInputText.Add(CommonGComp.PasswordTextInput,passwordTextBox);
         // accountTextBox.text = GameManager.Instance.loginSystem.accountNumber;
