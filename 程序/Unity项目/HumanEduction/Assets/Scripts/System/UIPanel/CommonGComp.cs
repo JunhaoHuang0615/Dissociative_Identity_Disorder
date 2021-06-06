@@ -20,9 +20,11 @@ public enum CommonGComp
 {
     AccountTextInput,
     PasswordTextInput,
+    NameTextInput,
     LoadingProgressBar,
     ChaImgComp,
     ChaInfoComp,
+
 
 
 

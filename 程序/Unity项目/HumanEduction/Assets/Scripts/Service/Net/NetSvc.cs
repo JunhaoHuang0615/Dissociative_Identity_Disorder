@@ -104,13 +104,19 @@ public class NetSvc : MonoBehaviour
             print(msg.err);
             switch (((ErrCode)msg.err))
             {
+                case ErrCode.UpdateDBError:
+                    PECommon.Log("数据库更新异常",PECommon.LogType.Error);
+                    GameManager.Instance.currentUIManager.showTipsWindow("网络不稳定");
+                    break;
                 case ErrCode.AcctIsOnline:
                     GameManager.Instance.currentUIManager.showTipsWindow("账号已经在线");
                     break;
                 case ErrCode.WrongPass:
                     GameManager.Instance.currentUIManager.showTipsWindow("账号密码错误");
                     break;
-
+                case ErrCode.NameIsExist:
+                    GameManager.Instance.currentUIManager.showTipsWindow("名称已经存在");
+                    break;
             }
 
             return;
@@ -121,6 +127,9 @@ public class NetSvc : MonoBehaviour
             case CMD.RspLogin:
                 //如果获得了服务器的响应
                 GameManager.Instance.loginSystem.HandleServerData(msg);
+                break;
+            case CMD.RspRename:
+                GameManager.Instance.characterSelectSystem.RspRename(msg);
                 break;
         }
 

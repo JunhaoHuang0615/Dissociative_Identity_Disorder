@@ -9,6 +9,8 @@ namespace Protocol
     {
         public ReqLogin reqLogin;
         public RspLogin rspLogin;
+        public RspRename rspRename;
+        public ReqRename reqRename;
     }
 
     //玩家的数据信息,是需要传送的
@@ -24,13 +26,25 @@ namespace Protocol
         public int diamond;
 
     }
-
-    //接收到登录请求的信息
+    //请求重新命名
     [Serializable]
     public class ReqLogin
     {
         public string account;
         public string password;
+    }
+
+    //接收到登录请求的信息
+    [Serializable]
+    public class ReqRename
+    {
+        public string name;
+    }
+    [Serializable]
+    public class RspRename
+    {   
+        //如果可以使用，则把名字发回来，否则会包含错误码
+        public string name;
     }
 
     //服务器登录回应的信息
@@ -48,6 +62,8 @@ namespace Protocol
         //登录相关 100开始
         ReqLogin = 100,
         RspLogin = 102,
+        ReqRename = 103,
+        RspRename = 104,
 
     }
 
@@ -57,6 +73,8 @@ namespace Protocol
         None = 0, //没有错误
         AcctIsOnline, //账号已经上线
         WrongPass,//密码码错误
+        NameIsExist,//名字已经存在
+        UpdateDBError,//账号更新错误
     }
     public class IPConfig
     {

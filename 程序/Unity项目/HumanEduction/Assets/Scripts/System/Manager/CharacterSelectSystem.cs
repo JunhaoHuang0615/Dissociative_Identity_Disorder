@@ -28,14 +28,27 @@ public class CharacterSelectSystem : MonoBehaviour
     {
         if(msg.rspLogin.playerData.name == "")
         {
-           //创建角色界面
-           
+            //创建角色界面
+            GameManager.Instance.currentUIManager.UIPanelDict[UIPanelType.LoginPanel].ToOtherPanel(UIPanelType.CharacterSelectPanel, Constants.SceneCharacter, GameProgress.CharacterSelect,true);
+            print("名字空");
+            return;
         }
         else
         {
-           //直接加载主城场景
-           //直接ChangetoOther
+            //直接加载主城场景
+            //直接ChangetoOther
+            print("即将进入主城");
+            GameManager.Instance.currentUIManager.UIPanelDict[UIPanelType.LoginPanel].ToOtherPanel(UIPanelType.Ingame, Constants.SceneMainGame, GameProgress.InGame,true);
         }
+    }
+
+    //当收到名字请求回复的时候要做的事情：
+    public void RspRename(NetMsg msg)
+    {   
+            GameManager.Instance.SetPlayerName(msg.rspRename.name);
+            //跳转场景
+            GameManager.Instance.currentUIManager.UIPanelDict[UIPanelType.CharacterSelectPanel].ToOtherPanel(UIPanelType.Ingame, Constants.SceneMainGame, GameProgress.InGame,true);
+            //关闭当前页面
     }
 }
 

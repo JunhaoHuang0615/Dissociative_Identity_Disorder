@@ -1,6 +1,5 @@
 E:\NullNet_Share\人格离析\程序\Unity项目\dll\Lib\Protocol.dll
 E:\NullNet_Share\人格离析\程序\Unity项目\dll\Lib\Protocol.pdb
-E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Protocol\obj\Debug\Protocol.csprojAssemblyReference.cache
 E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Protocol\obj\Debug\Protocol.csproj.CoreCompileInputs.cache
 E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Protocol\obj\Debug\Protocol.csproj.CopyComplete
 E:\NullNet_Share\人格离析\程序\Unity项目\Server_Build\Server_Build\Protocol\obj\Debug\Protocol.dll

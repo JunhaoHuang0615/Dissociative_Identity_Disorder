@@ -67,6 +67,42 @@ public class LoginSys
         netMsgPack.serverSession.SendMsg(rspMsg);
     }
 
+    //收到命名请求之后：
+    public void ReqRename(MsgPack netMsgPack)
+    {
+        ReqRename data = netMsgPack.netMsg.reqRename;
+        NetMsg msg = new NetMsg
+        {
+            cmd = (int)CMD.RspRename
+        };
 
+        if (CacheSvc.Instance.IsNameExist(data.name))
+        {
+            //名字是否已经存在
+            //存在：返回错误码
+            msg.err = (int)ErrCode.NameIsExist;
+        }
+        else
+        {
+            //不存在：更新缓存，以及数据库，再返回给客户端
+            //还有一种做法是更新缓存之后，马上返回客户端，但是没办法知道数据库是否更新成功
+            //如果提前返回客户端，必须要设定机制数据库更新是成功的
+            PlayerData playerData = CacheSvc.Instance.GetPlayerDataBySession(netMsgPack.serverSession);
+            playerData.name = data.name; //将缓存的数据更新了
+            if (!CacheSvc.Instance.UpdatePlayerData(playerData.id, playerData))
+            {
+                msg.err = (int)ErrCode.UpdateDBError;
+            }
+            else
+            {
+                msg.rspRename = new RspRename
+                {
+                    name = data.name
+                };
+            }
+        }
+        netMsgPack.serverSession.SendMsg(msg);
+    }
 }
+
 

@@ -21,7 +21,7 @@ public class FGUI_loading : BasePanel
         progressBar = contentPane.GetChild("LoadingProgressBar").asProgress;
         uIManager.commonBar.Add(CommonGComp.LoadingProgressBar,progressBar);
         //因为progress是1为加载完成
-        progressBar.value = GameManager.Instance.currentLoadScene.progress * 100;
+        //progressBar.value = GameManager.Instance.currentLoadScene.progress * 100;
     
     }
     

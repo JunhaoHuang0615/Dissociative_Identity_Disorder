@@ -44,10 +44,11 @@ public class GameManager : MonoBehaviour
 /*    public Dictionary<GameProgress,MonoBehaviour> progrressManagerDict;*/
     public GameProgress currentProgress;
     //一些系统的实例
-    bool systemFound;
     public PaintFunction paintFunction;
     public LoginSystem loginSystem;
     public CharacterSelectSystem characterSelectSystem;
+    //Enhance：可以设置一个总类，这个class继承monobehavior，然后其他系统继承它，这样只需要去注册新系统，加入总系统列表
+    //初始化的时候，所有系统都会被初始化
 
     // ============================================================================================
 
@@ -84,7 +85,12 @@ public class GameManager : MonoBehaviour
     {
         playerData = data.playerData;
     }
-
+    public void SetPlayerName(string name)
+    {
+        playerData.name = name;
+    }
+    //UI Loading
+    public bool needload = false;
 
     // =========================================================================================
     // =========================================================================================
@@ -152,8 +158,8 @@ public class GameManager : MonoBehaviour
             loginSystem = this.GetComponent<LoginSystem>();
             loginSystem.getUIManager(currentUIManager);
         }
-        //根据玩家目前进入的进程来判断
-        if (currentProgress == GameProgress.Drawing && systemFound == false) {
+        //根据玩家目前进入的进程来判断,后面直接挂到GameManger上
+        if (currentProgress == GameProgress.Drawing ) {
             try {
                 paintFunction = FindObjectOfType<PaintFunction>();
                 paintFunction.getUIManager(currentUIManager);
@@ -178,14 +184,15 @@ public class GameManager : MonoBehaviour
 
 
         //================= 关于loading界面的控制 ========================
-        if (currentLoadScene != null)
+        if (currentLoadScene != null && needload)
             currentUIManager.changeProgressBarValue(CommonGComp.LoadingProgressBar, currentLoadScene.progress * 100);
         // if(currentLoadScene!=null)
         //     Debug.Log(GameManager.Instance.currentLoadScene.progress * 100);
-        if (currentLoadScene != null && currentLoadScene.progress == 1) {
+        if (currentLoadScene != null && currentLoadScene.progress == 1 && needload) {
             currentUIManager.closeLoadingUI();
             print("关闭Loading");
             currentLoadScene = null;
+            needload = false;
         }
 
 
@@ -206,12 +213,12 @@ public class GameManager : MonoBehaviour
     {
         currentLoadScene = SceneManager.LoadSceneAsync(sceneName);
         currentProgress = name;
-        systemFound = false;
     }
 
     //加载场景时，有的场景需要Loading界面过渡时可以使用这个方法
     public void LoadingToScene(string targetSceneName, GameProgress name)
     {
+        needload = true;
         //loading的场景是哪一个
         AsyncLoadScene(targetSceneName, name);
         currentUIManager.loadingUI();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="kgrtueft" jpegQuality="80" compressPNG="true">
+<packageDescription id="kgrtueft">
   <resources>
     <component id="n0i75" name="PanelMask_black.xml" path="/Mask/" exported="true"/>
     <component id="n0i76" name="PanelMask_White.xml" path="/Mask/" exported="true"/>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using FairyGUI;
+using Protocol;
 
 public class FGUI_Character_Select : BasePanel
 {   
@@ -19,6 +20,8 @@ public class FGUI_Character_Select : BasePanel
     private Character_Linked_File character_Linked_File; //从GameMananger里面拿，GameMananger可以从其他地方拿
 
     private GButton btn_returnmenu;
+    private GButton btn_enterGame;
+    private GTextInput nameInput;
     protected override void OnInitPanel(){
         //动画可能后期不需要
         Transition t = panelMask.GetTransition("hide_mask");
@@ -27,9 +30,14 @@ public class FGUI_Character_Select : BasePanel
         chaInfoComp = UIPackage.CreateObject("Panel_Character_Select","character_info").asCom;
         uIManager.commonComp.Add(CommonGComp.ChaImgComp,chaImgComp);
         uIManager.commonComp.Add(CommonGComp.ChaInfoComp,chaInfoComp);
+        nameInput = contentPane.GetChild("NameInput").asTextInput;
+        uIManager.commonInputText.Add(CommonGComp.NameTextInput, nameInput);
 
         btn_returnmenu = contentPane.GetChild("btn_mainMenu").asButton;
-        btn_returnmenu.onClick.Add(enterMainGame);
+        btn_returnmenu.onClick.Add(returnMainMenu);
+
+        btn_enterGame = contentPane.GetChild("btn_enterGame").asButton;
+        btn_enterGame.onClick.Add(sendNameToServer);
     }
     // Update is called once per frame
     void Update()
@@ -76,11 +84,34 @@ public class FGUI_Character_Select : BasePanel
     }
     //在注册按钮事件时，需要使用：例如组件targetComp中有一个按钮btn1，给他注册事件
     //targetComp.GetChild("btn1").onClick.Add(  ()=>{displayImg(chuandiComp);}    )
+    //下线以后才可以切换至主界面
     private void returnMainMenu(){
-        ToOtherPanel(UIPanelType.LoginPanel,true,Constants.SceneLogin,GameProgress.LoginSystem);
+        ToOtherPanel(UIPanelType.LoginPanel,Constants.SceneLogin,GameProgress.LoginSystem);
     }
 
+    //这里需要向服务器发送名字，并且得到回复后才可以进入下一个场景，此方法离线模式可用
+
     private void enterMainGame(){
-        ToOtherPanel(UIPanelType.Ingame,true,Constants.SceneMainGame,GameProgress.InGame);
+        ToOtherPanel(UIPanelType.Ingame,Constants.SceneMainGame,GameProgress.InGame);
+    }
+
+    private void sendNameToServer()
+    {
+        if (nameInput.text == "")
+        {
+            uIManager.showTipsWindow("请输入名称");
+        }
+        else
+        {
+            NetMsg netMsg = new NetMsg
+            {
+                cmd = (int)CMD.ReqRename,
+                reqRename = new ReqRename
+                {
+                    name = nameInput.text
+                }
+            };
+            NetSvc.Instance.SendMsg(netMsg);
+        }
     }
 }

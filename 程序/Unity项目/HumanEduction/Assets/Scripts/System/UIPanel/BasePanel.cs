@@ -48,12 +48,6 @@ public class BasePanel : Window
 
     }
 
-    //进入其他页面
-    public void ToOtherPanel(UIPanelType otherType,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
-        ExitPanel(()=>{
-            ChangePanelCallBack(otherType,sceneName,progrossname);
-        });
-    }
     //退出页面
     protected void ExitPanel(PlayCompleteCallback callback){
         Transition t = panelMask.GetTransition("show_mask");
@@ -65,24 +59,30 @@ public class BasePanel : Window
         uIManager.UIPanelDict[currentUIPanel].Hide();
         GameManager.Instance.AsyncLoadScene(sceneName,progrossname);
         uIManager.UIPanelDict[otherType].Show();
-        if (uIManager.tipsWindow.isPanelShowing)
-            uIManager.tipsWindowFront();
         uIManager.UIPanelDict[otherType].EnterPanel();
      
     }
     //是否需要load场景
-    protected void ChangePanelCallBack(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){
+    protected void ChangePanelCallBack_AfterLoad(UIPanelType otherType,string sceneName, GameProgress progrossname){
         uIManager.UIPanelDict[currentUIPanel].Hide();
         GameManager.Instance.LoadingToScene(sceneName,progrossname);
         uIManager.UIPanelDict[otherType].Show();
-        if (uIManager.tipsWindow.isPanelShowing)
-            uIManager.tipsWindowFront();
+        uIManager.UIPanelDict[UIPanelType.Loading].BringToFront();
         uIManager.UIPanelDict[otherType].EnterPanel();
      
     }
-    public void ToOtherPanel(UIPanelType otherType,bool loadOrNot,string sceneName, GameProgress progrossname){ //传递想要跳转的UIPanel过来
+    public void ToOtherPanel(UIPanelType otherType,string sceneName, GameProgress progrossname,bool loadOrNot = false)
+    { //传递想要跳转的UIPanel过来
         ExitPanel(()=>{
-            ChangePanelCallBack(otherType,loadOrNot,sceneName,progrossname);
+            if (loadOrNot)
+            {
+                ChangePanelCallBack_AfterLoad(otherType, sceneName, progrossname);
+                Debug.Log("这里需要加载Loading");
+            }
+            else
+            {
+                ChangePanelCallBack(otherType,sceneName,progrossname);
+            }
         });
     }
         //     //在加载登录场景之前之前，都必须先异步加载loading界面，loading的目标场景就是login场景

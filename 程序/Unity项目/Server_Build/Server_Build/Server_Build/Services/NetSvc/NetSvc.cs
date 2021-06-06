@@ -81,6 +81,9 @@ public class NetSvc
                 LoginSys.Instance.ReqLogin(netMsg);
 
                 break;
+            case CMD.ReqRename:
+                LoginSys.Instance.ReqRename(netMsg);
+                break;
         }
     }
 

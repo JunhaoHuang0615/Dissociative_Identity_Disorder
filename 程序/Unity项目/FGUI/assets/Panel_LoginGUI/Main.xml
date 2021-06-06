@@ -4,32 +4,32 @@
     <graph id="n4_zbym" name="BG2" xy="1276,244" size="477,559" type="rect">
       <relation target="" sidePair="bottom-bottom,right-right"/>
     </graph>
-    <text id="n5_zbym" name="n5" xy="1304,495" size="105,61" fontSize="50" text="账号">
+    <text id="n5_zbym" name="n5" xy="1304,495" size="104,67" fontSize="50" text="账号">
       <relation target="n4_zbym" sidePair="left-left,top-top"/>
     </text>
     <graph id="n7_zbym" name="n7" xy="1420,486" size="280,77" type="rect" fillColor="#ff999999">
       <relation target="n5_zbym" sidePair="left-left,top-top"/>
     </graph>
-    <text id="n6_zbym" name="accountinput" xy="1426,493" size="270,62" input="true" prompt="username" fontSize="50" vAlign="middle" autoSize="none" text="">
+    <text id="n6_zbym" name="accountinput" xy="1426,493" size="270,62" fontSize="50" vAlign="middle" autoSize="none" text="" input="true" prompt="username" restrict="^[0-9a-zA-Z_]{1,}$">
       <relation target="n5_zbym" sidePair="left-left,top-top"/>
     </text>
-    <text id="n9_zbym" name="n9" xy="1304,585" size="105,61" fontSize="50" text="密码&#xA;"/>
+    <text id="n9_zbym" name="n9" xy="1304,585" size="104,131" fontSize="50" text="密码&#xA;"/>
     <graph id="n10_zbym" name="n10" xy="1420,576" size="280,77" type="rect" fillColor="#ff999999"/>
-    <text id="n11_zbym" name="passwordinput" xy="1426,583" size="270,62" input="true" prompt="username" password="true" fontSize="50" vAlign="middle" autoSize="none" text=""/>
-    <component id="n16_hdar" name="btn_new" src="n0i7a" pkg="kgrtueft" xy="626,213">
+    <text id="n11_zbym" name="passwordinput" xy="1426,583" size="270,62" fontSize="50" vAlign="middle" autoSize="none" text="" input="true" prompt="username" restrict="^[0-9a-zA-Z_]{1,}$" password="true"/>
+    <component id="n16_hdar" name="btn_new" src="n0i7a" fileName="Button/btn2.xml" pkg="kgrtueft" xy="626,213">
       <relation target="" sidePair="left-left,bottom-bottom"/>
       <Button title="公告"/>
     </component>
-    <component id="n17_hdar" name="btn_exit" src="n0i79" pkg="kgrtueft" xy="1533,700" scale="1.25,1.25">
+    <component id="n17_hdar" name="btn_exit" src="n0i79" fileName="Button/btn1.xml" pkg="kgrtueft" xy="1533,700" scale="1.25,1.25">
       <relation target="n4_zbym" sidePair="right-right,bottom-bottom"/>
       <Button title="退出"/>
     </component>
-    <component id="n18_hdar" name="btn_start" src="n0i79" pkg="kgrtueft" xy="1308,700" scale="1.25,1.25">
+    <component id="n18_hdar" name="btn_start" src="n0i79" fileName="Button/btn1.xml" pkg="kgrtueft" xy="1308,700" scale="1.25,1.25">
       <relation target="n4_zbym" sidePair="left-left,bottom-bottom"/>
       <Button title="开始"/>
     </component>
-    <component id="n20_hdar" name="PanelMask" src="n0i76" pkg="kgrtueft" xy="0,0" hideByEditor="true" touchable="false"/>
-    <graph id="n21_r8av" name="White_mask" xy="0,0" size="1920,1080" hideByEditor="true" touchable="false" type="rect"/>
+    <component id="n20_hdar" name="PanelMask" src="n0i76" fileName="Mask/PanelMask_White.xml" pkg="kgrtueft" xy="0,0" touchable="false"/>
+    <graph id="n21_r8av" name="White_mask" xy="0,0" size="1920,1080" touchable="false" type="rect"/>
   </displayList>
   <transition name="WhiteMaskPanel">
     <item time="0" type="Alpha" target="n21_r8av" tween="true" startValue="1" endValue="0" duration="12"/>

@@ -84,11 +84,6 @@ public class LoginSystem : MonoBehaviour
     public void HandleServerData(NetMsg netMsg)
     {
         GameManager.Instance.SetPlayerData(netMsg.rspLogin);
-        GameManager.Instance.currentUIManager.UIPanelDict[UIPanelType.LoginPanel].ToOtherPanel(UIPanelType.CharacterSelectPanel, true, Constants.SceneCharacter, GameProgress.CharacterSelect);
-        if(GameManager.Instance.characterSelectSystem == null)
-        {
-            print("null");
-        }
         GameManager.Instance.characterSelectSystem.HandlePlayerData(netMsg);
     }
 }

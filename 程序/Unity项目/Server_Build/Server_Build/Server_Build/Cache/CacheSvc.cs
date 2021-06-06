@@ -51,6 +51,27 @@ class CacheSvc
         return dBMgr.QuaryPlayerData(acct, pass);
     }
 
+    public bool IsNameExist(string name)
+    {
+        return DBMgr.Instance.QueryNameData(name);
+    }
+
+    public PlayerData GetPlayerDataBySession(ServerSession session)
+    {
+        if (onLineSessionDic.TryGetValue(session, out PlayerData playerData))
+        {
+            return playerData;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public bool UpdatePlayerData(int id, PlayerData playerData)
+    {
+        return DBMgr.Instance.UpdatePlayerData(id, playerData);
+    }
+
 
 
     //新上线账号加入缓存
@@ -58,6 +79,8 @@ class CacheSvc
     {
         onLineDict.Add(acct, serverSession);
         onLineSessionDic.Add(serverSession, playerData);
+
+        //TODO： 玩家同一个ip在下线时要清空，否则重复登录会报错
     }
 }
 

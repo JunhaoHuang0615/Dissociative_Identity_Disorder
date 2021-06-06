@@ -130,6 +130,59 @@ class DBMgr
         return id;
     }
 
+    public bool QueryNameData(string name)
+    {
+        bool exist = false;
+        MySqlDataReader reader = null;
+        try
+        {
+            MySqlCommand cmd = new MySqlCommand("select * from account where name= @name", conn);
+            cmd.Parameters.AddWithValue("name", name);
+            reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                exist = true;
+            }
+        }
+        catch (Exception e)
+        {
+            PECommon.Log("Query Name State Error:" + e, PECommon.LogType.Error);
+        }
+        finally
+        {
+            if (reader != null)
+            {
+                reader.Close();
+            }
+        }
+
+        return exist;
+    }
+
+    public bool UpdatePlayerData(int id, PlayerData playerData)
+    {
+        try
+        {
+            MySqlCommand cmd = new MySqlCommand(
+            "update account set name=@name,lv=@lv,exp=@exp,power=@power,coin=@coin,diamond=@diamond where id =@id", conn);
+            cmd.Parameters.AddWithValue("id", id);
+            cmd.Parameters.AddWithValue("name", playerData.name);
+            cmd.Parameters.AddWithValue("lv", playerData.lv);
+            cmd.Parameters.AddWithValue("exp", playerData.exp);
+            cmd.Parameters.AddWithValue("power", playerData.power);
+            cmd.Parameters.AddWithValue("coin", playerData.coin);
+            cmd.Parameters.AddWithValue("diamond", playerData.diamond);
+
+            //TOADD Others
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception e)
+        {
+            PECommon.Log("Update PlayerData Error:" + e, PECommon.LogType.Error);
+            return false;
+        }
+        return true;
+    }
 
 }
 

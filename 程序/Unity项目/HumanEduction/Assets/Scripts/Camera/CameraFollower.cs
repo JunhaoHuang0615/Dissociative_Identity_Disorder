@@ -12,6 +12,7 @@ public class CameraFollower : MonoBehaviour
 
     public bool lookAtPlayer; //是否让相机始终与目标角度一致
     private void Awake() {
+        //相机跟随目标
         target = GameObject.FindWithTag("Player");
         offset = this.transform.position - target.transform.position;
     }

@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
     float v; // 纵深方向
 
     void Awake() {
-        player = GameObject.FindGameObjectWithTag("Player"); //找到游戏中Tag是Player的OBJ
+        player = this.gameObject; //找到游戏中Tag是Player的OBJ
         rigbody = this.GetComponent<Rigidbody>();
         chaCollider = this.GetComponent<CapsuleCollider>();
     }
