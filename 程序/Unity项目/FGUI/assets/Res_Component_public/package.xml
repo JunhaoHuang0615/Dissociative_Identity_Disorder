@@ -9,6 +9,10 @@
     <component id="n0i7a" name="btn2.xml" path="/Button/" exported="true"/>
     <component id="hdarb" name="btn_text.xml" path="/Button/" exported="true"/>
     <component id="hdarc" name="btn_normal.xml" path="/Button/" exported="true"/>
+    <component id="po2sd" name="Task.xml" path="/Task/" exported="true"/>
+    <component id="po2se" name="taskTitle.xml" path="/Task/" exported="true"/>
+    <component id="po2sg" name="Task_WithDetail.xml" path="/Task/"/>
+    <component id="x6nvh" name="Health.xml" path="/"/>
   </resources>
   <publish name="Res_Component_public"/>
 </packageDescription>

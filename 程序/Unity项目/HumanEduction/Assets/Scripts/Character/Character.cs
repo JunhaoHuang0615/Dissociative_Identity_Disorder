@@ -22,6 +22,7 @@ public class Character : MonoBehaviour
     //定义两个方向的参数h和v
     float h; // 水平方向（Horizontal）通过U3D的设置，A和D， 左和右将会产生水平方向的变化
     float v; // 纵深方向
+    bool isGrounded;
 
     void Awake() {
         player = this.gameObject; //找到游戏中Tag是Player的OBJ
@@ -34,9 +35,10 @@ public class Character : MonoBehaviour
     {
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
+        isGrounded = isGround();
         playerMoveMethod(h,v);
 
-        if(isGround() && Input.GetKeyDown(KeyCode.Space)){
+        if(isGrounded && Input.GetKeyDown(KeyCode.Space)){
             playerJumpMethod();
         }
         if(isJumping == true && Input.GetKey(KeyCode.Space)){
@@ -47,10 +49,7 @@ public class Character : MonoBehaviour
             isJumping = false;
         }
     }
-    //由于跳跃关系到物理，因此需要使用fixupdate
-    private void FixedUpdate() {
 
-    }
     // ================================= 玩家移动 ===================================
     void playerMoveMethod(float h , float v){
         //水平方向 并按照世界坐标
@@ -96,5 +95,9 @@ public class Character : MonoBehaviour
     }
     public float getV(){
         return v;
+    }
+    public bool isOnGrounded()
+    {
+        return isGrounded;
     }
 }

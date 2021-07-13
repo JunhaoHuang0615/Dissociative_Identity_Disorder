@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,50" overflow="hidden">
+  <controller name="open" exported="true" pages="0,,1," selected="0"/>
+  <displayList>
+    <text id="n0_po2s" name="Task_Title" xy="32,3" size="196,35" fontSize="25" color="#ffff00" autoSize="none" text="任务标题"/>
+    <component id="n1_po2s" name="PLUS_BTN" src="po2si" fileName="Button/plus_btn.xml" pkg="kk4d64or" xy="-9,-4">
+      <gearDisplay controller="open" pages="0"/>
+    </component>
+  </displayList>
+</component>

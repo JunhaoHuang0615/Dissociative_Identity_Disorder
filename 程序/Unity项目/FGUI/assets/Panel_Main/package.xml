@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="k7tmoo94" jpegQuality="80" compressPNG="true">
-  <resources/>
+<packageDescription id="k7tmoo94">
+  <resources>
+    <component id="po2s0" name="Main.xml" path="/" exported="true"/>
+  </resources>
   <publish name="Panel_Main"/>
 </packageDescription>

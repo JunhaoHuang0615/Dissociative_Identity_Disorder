@@ -31,7 +31,7 @@ public class Selector : Node
                     break;
             }
         }
-        //到最后了没有正在运行或者成功的，则说明这个Selector是失败的了
+        //到最后了没有正在运行或者成功的，则说明这个Selector是失败的了，一般默认状态放最后，是一定成功的
         _nodeState = NodeState.FAILURE;
         return _nodeState;
     }

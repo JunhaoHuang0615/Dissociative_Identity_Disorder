@@ -25,6 +25,7 @@ public class ChaseNode : Node
         if (distance > 0.2f)
         {   
             agent.isStopped = false;
+            agent.speed = ai.enemySpeed * Time.deltaTime;
             agent.SetDestination(target.position);
             return NodeState.RUNNING;
         }

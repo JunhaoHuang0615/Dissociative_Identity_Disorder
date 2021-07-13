@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PaintPlaner
   - PaintDot
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,9 +21,9 @@ TagManager:
   - Paint_Dot
   - Paint_Plane
   - UIBG
-  - 
-  - 
-  - 
+  - miniMap_Icon
+  - Map
+  - Enemy
   - 
   - 
   - 

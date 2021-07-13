@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="300,150">
+  <displayList>
+    <text id="n0_po2s" name="Task_Title" xy="40,8" size="196,35" fontSize="25" color="#ffff00" autoSize="none" text="任务标题"/>
+    <component id="n1_po2s" name="MINUS_BTN" src="po2sj" fileName="Button/minus_btn.xml" pkg="kk4d64or" xy="0,0"/>
+    <text id="n2_po2s" name="Task_Text" xy="40,46" size="196,29" fontSize="20" color="#ffffff" autoSize="height" text="任务描述"/>
+  </displayList>
+</component>

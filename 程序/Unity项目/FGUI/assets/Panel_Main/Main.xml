@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false">
+  <displayList>
+    <graph id="n0_po2s" name="mapBg" xy="63,54" size="270,275" type="rect" lineColor="#00000000" fillColor="#87000000">
+      <relation target="" sidePair="left-left,top-top"/>
+    </graph>
+    <graph id="n1_po2s" name="MapImg" xy="82,74" size="233,236" type="rect" lineColor="#00000000" fillColor="#ddffffff">
+      <relation target="n0_po2s" sidePair="left-left,top-top"/>
+    </graph>
+    <graph id="n2_po2s" name="Variable_bg" xy="64,340" size="268,39" type="rect" lineColor="#00000000" fillColor="#99666666">
+      <relation target="n0_po2s" sidePair="left-left,top-top"/>
+    </graph>
+    <text id="n3_po2s" name="X_Title" xy="73,348" size="21,23" fontSize="15" color="#cccc00" autoSize="none" text="X :&#xA;">
+      <relation target="n2_po2s" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n5_po2s" name="X_value" xy="101,348" size="67,23" fontSize="15" color="#cccc00" autoSize="none" text="256">
+      <relation target="n2_po2s" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n6_po2s" name="Y_Title" xy="235,348" size="21,23" fontSize="15" color="#cccc00" autoSize="none" text="Y :&#xA;">
+      <relation target="n2_po2s" sidePair="left-left,top-top"/>
+    </text>
+    <text id="n7_po2s" name="Y_value" xy="263,348" size="67,23" fontSize="15" color="#cccc00" autoSize="none" text="256">
+      <relation target="n2_po2s" sidePair="left-left,top-top"/>
+    </text>
+    <graph id="n8_po2s" name="weaponBg" xy="1562,62" size="270,275" type="rect" lineColor="#00000000" fillColor="#87000000">
+      <relation target="" sidePair="left-left,top-top"/>
+    </graph>
+    <graph id="n9_po2s" name="wepimg" xy="1581,82" size="233,236" type="rect" lineColor="#00000000" fillColor="#ddffffff">
+      <relation target="n8_po2s" sidePair="left-left,top-top"/>
+    </graph>
+    <component id="n14_po2s" name="Task_List" src="po2sd" fileName="Task/Task.xml" pkg="kgrtueft" xy="1546,348"/>
+  </displayList>
+</component>

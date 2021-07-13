@@ -21,5 +21,6 @@ public class Character_Anim : MonoBehaviour
     {
         anim.SetFloat("X",character.getH());
         anim.SetFloat("Z",character.getV());
+        anim.SetBool("isOnGround",character.isOnGrounded());
     }
 }

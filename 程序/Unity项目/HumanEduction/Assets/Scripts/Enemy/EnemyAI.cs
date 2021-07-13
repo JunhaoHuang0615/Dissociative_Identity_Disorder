@@ -18,6 +18,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float chasingRange;
     //怪物攻击范围
     [SerializeField] private float shootingRange;
+    //怪物移动速度
+    [SerializeField] public float enemySpeed;
+    //怪物家位置
+    [SerializeField] public Transform homePosition;
+
+    //怪物身上的rigbody组件
+    [SerializeField] private Rigidbody rd;
 
 
 
@@ -84,7 +91,7 @@ public class EnemyAI : MonoBehaviour
         topNode.Evaluate();
         if (topNode.nodeState == NodeState.FAILURE)
         {
-            //如果整棵树都是Falsele ,要干嘛？
+            //如果整棵树都是False ,要干嘛？
             idle(Color.red);
             agent.isStopped = true;
         }

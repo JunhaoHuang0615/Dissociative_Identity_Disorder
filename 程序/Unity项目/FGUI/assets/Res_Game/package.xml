@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="kk4d64or" jpegQuality="80" compressPNG="true">
+<packageDescription id="kk4d64or">
   <resources>
     <image id="n0i70" name="b4.png" path="/Button/" exported="true"/>
     <image id="n0i71" name="b5.png" path="/Button/" exported="true"/>
@@ -17,6 +17,10 @@
     <font id="n0i7d" name="number1_9.fnt" path="/Number/" exported="true"/>
     <movieclip id="n0i7e" name="pet.jta" path="/Anim/" exported="true"/>
     <component id="mtylf" name="loading.xml" path="/Anim/" exported="true"/>
+    <image id="po2sg" name="—Pngtree—plus vector icon_3755188.png" path="/Other/" exported="true"/>
+    <image id="po2sh" name="—Pngtree—symbol minus sign cute cartoon_4463567.png" path="/Other/" exported="true"/>
+    <component id="po2si" name="plus_btn.xml" path="/Button/" exported="true"/>
+    <component id="po2sj" name="minus_btn.xml" path="/Button/" exported="true"/>
   </resources>
   <publish name="Res_Game"/>
 </packageDescription>
